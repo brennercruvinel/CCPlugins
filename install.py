@@ -31,20 +31,29 @@ def main():
     commands_dest.mkdir(parents=True, exist_ok=True)
     print(f"[OK] Target directory: {commands_dest}")
     
-    # Backup existing commands if any exist
-    existing_files = list(commands_dest.glob("*.md"))
-    if existing_files:
-        backup_dir = claude_dir / f"commands_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-        backup_dir.mkdir(exist_ok=True)
-        print(f"\n[BACKUP] Backing up {len(existing_files)} existing commands to ~/.claude/{backup_dir.name}")
-        for file in existing_files:
-            shutil.copy2(file, backup_dir)
-    
     # Copy command files
     command_files = list(commands_source.glob("*.md"))
     if not command_files:
         print(f"[ERROR] No .md files found in {commands_source}")
         sys.exit(1)
+    
+    # Check for existing commands
+    existing_commands = []
+    for file in command_files:
+        dest_file = commands_dest / file.name
+        if dest_file.exists():
+            existing_commands.append(file.name)
+    
+    if existing_commands:
+        print(f"\n[WARNING] Found {len(existing_commands)} existing commands:")
+        for cmd in existing_commands:
+            print(f"  ! {cmd}")
+        
+        response = input("\nOverwrite existing commands? (y/N): ")
+        if response.lower() != 'y':
+            print("[CANCELLED] Installation cancelled.")
+            print("Tip: Use uninstall script first to remove old commands.")
+            sys.exit(0)
     
     print(f"\n[INSTALL] Installing {len(command_files)} commands:")
     for file in command_files:

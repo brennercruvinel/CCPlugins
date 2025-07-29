@@ -9,11 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - `/undo` - Rollback last destructive operation with backup support
-- `/context-cache` - Cache project information to speed up subsequent commands
+- `/make-it-pretty` - Improve code readability without changing functionality (includes type improvements)
+- `/todos-to-issues` - Convert TODO comments to GitHub issues automatically
+- `/human-mode` - Switch to pragmatic mode for practical solutions
 - Enhanced error handling across all commands
 - Ambiguity checking for `/fix-imports` command
 - Automatic backup creation in `/cleanproject`
 - Uninstall scripts (uninstall.py and uninstall.sh) for easy removal
+- TodoWrite integration in commands that process multiple items
+- Prompt before overwriting existing commands during installation
+
+### Removed
+- `/context-cache` - Removed as Claude Code already maintains context automatically
+- `/cleanup-types` - Merged functionality into `/make-it-pretty`
+- Automatic backup folders during installation (was creating unnecessary duplicates)
 
 ### Changed
 - Improved error handling and recovery instructions in all commands
@@ -45,7 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `/test` - Run tests and automatically fix simple failures
 - `/review` - Comprehensive code review for bugs, security, and performance
 - `/remove-comments` - Remove obvious comments while preserving valuable documentation
-- `/cleanup-types` - Remove TypeScript 'any' types and suggest proper types
+- `/cleanup-types` - Remove TypeScript 'any' types and suggest proper types (now part of `/make-it-pretty`)
 - `/fix-imports` - Fix broken imports after moving or renaming files
 - `/find-todos` - Find all TODO, FIXME, and HACK comments in your codebase
 - `/session-start` - Begin a documented coding session with goals tracking

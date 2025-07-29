@@ -120,13 +120,6 @@ Pre-configured commands that make Claude Code work like the senior engineer you 
 
 
 
-*Remove TypeScript `any types` and suggest proper types*
-```
-/cleanup-types
-```
-
-
-
 *`Fix broken imports` after moving or renaming files*
 ```
 /fix-imports
@@ -162,9 +155,23 @@ Pre-configured commands that make Claude Code work like the senior engineer you 
 
 
 
-*Cache project context to `speed up` subsequent commands*
+*`Improve code readability` without changing functionality*
 ```
-/context-cache
+/make-it-pretty
+```
+
+
+
+*Convert `TODO comments to GitHub issues` automatically*
+```
+/todos-to-issues
+```
+
+
+
+*Switch to `pragmatic mode` for practical solutions*
+```
+/human-mode
 ```
 
 

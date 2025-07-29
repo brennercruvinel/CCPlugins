@@ -11,20 +11,23 @@ import shutil
 from pathlib import Path
 
 def main():
-    # Command files to remove
+    # Command files to remove (including old ones for compatibility)
     commands = [
         "cleanproject.md",
-        "cleanup-types.md", 
+        "cleanup-types.md",  # Old command (removed)
         "commit.md",
-        "context-cache.md",
+        "context-cache.md",  # Old command (removed)
         "find-todos.md",
         "fix-imports.md",
         "format.md",
+        "human-mode.md",
+        "make-it-pretty.md",
         "remove-comments.md",
         "review.md",
         "session-end.md",
         "session-start.md",
         "test.md",
+        "todos-to-issues.md",
         "undo.md"
     ]
     

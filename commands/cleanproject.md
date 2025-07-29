@@ -34,6 +34,8 @@ Important: I will NEVER remove:
 - Essential configuration files
 - Source code files unless explicitly identified as temporary
 
+When I find multiple items to clean, I'll create a todo list to process them safely.
+
 Before removing anything, I'll:
 1. Show you what I plan to remove
 2. Create backups of files before deletion

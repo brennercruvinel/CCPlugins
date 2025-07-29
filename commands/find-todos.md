@@ -8,13 +8,10 @@ First, let me scan for various TODO patterns:
 # Common TODO patterns across different languages
 echo "Searching for TODOs, FIXMEs, and other markers..."
 
-# Count different types (excluding common build/dependency directories)
-TODO_COUNT=$(grep -r -E "TODO|Todo|todo" --exclude-dir=.git --exclude-dir=vendor --exclude-dir=deps --exclude-dir=dependencies --exclude-dir=build --exclude-dir=dist --exclude-dir=target --exclude-dir=out . 2>/dev/null | wc -l)
-FIXME_COUNT=$(grep -r -E "FIXME|Fixme|fixme" --exclude-dir=.git --exclude-dir=vendor --exclude-dir=deps --exclude-dir=dependencies --exclude-dir=build --exclude-dir=dist --exclude-dir=target --exclude-dir=out . 2>/dev/null | wc -l)
-HACK_COUNT=$(grep -r -E "HACK|Hack|hack" --exclude-dir=.git --exclude-dir=vendor --exclude-dir=deps --exclude-dir=dependencies --exclude-dir=build --exclude-dir=dist --exclude-dir=target --exclude-dir=out . 2>/dev/null | wc -l)
-NOTE_COUNT=$(grep -r -E "NOTE:|Note:|XXX" --exclude-dir=.git --exclude-dir=vendor --exclude-dir=deps --exclude-dir=dependencies --exclude-dir=build --exclude-dir=dist --exclude-dir=target --exclude-dir=out . 2>/dev/null | wc -l)
+# Count different types based on project structure
+echo "Analyzing codebase for markers..."
 
-echo "Found: $TODO_COUNT TODOs, $FIXME_COUNT FIXMEs, $HACK_COUNT HACKs, $NOTE_COUNT NOTEs"
+# Results will be shown after analysis
 ```
 
 I'll search for these patterns:

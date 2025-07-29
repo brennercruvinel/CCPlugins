@@ -5,33 +5,48 @@ set -e
 COMMANDS_DIR="$HOME/.claude/commands"
 mkdir -p "$COMMANDS_DIR"
 
-if [ -n "$(ls -A "$COMMANDS_DIR"/*.md 2>/dev/null)" ]; then
-    BACKUP_DIR="$HOME/.claude/commands_backup_$(date +%Y%m%d_%H%M%S)"
-    mkdir -p "$BACKUP_DIR"
-    cp "$COMMANDS_DIR"/*.md "$BACKUP_DIR/" 2>/dev/null || true
-fi
 
 # Download commands from GitHub
 REPO_URL="https://raw.githubusercontent.com/brennercruvinel/CCPlugins/main/commands"
 COMMANDS=(
     "cleanproject.md"
-    "cleanup-types.md"
     "commit.md"
-    "context-cache.md"
     "find-todos.md"
     "fix-imports.md"
     "format.md"
+    "human-mode.md"
+    "make-it-pretty.md"
     "remove-comments.md"
     "review.md"
     "session-end.md"
     "session-start.md"
     "test.md"
+    "todos-to-issues.md"
     "undo.md"
 )
 
-echo "📥 Downloading commands..."
+# Check for existing commands
+EXISTING=0
+for cmd in "${COMMANDS[@]}"; do
+    if [ -f "$COMMANDS_DIR/$cmd" ]; then
+        ((EXISTING++))
+    fi
+done
+
+if [ $EXISTING -gt 0 ]; then
+    echo "[WARNING] Found $EXISTING existing commands"
+    read -p "Overwrite existing commands? (y/N): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "[CANCELLED] Installation cancelled."
+        echo "Tip: Use uninstall script first to remove old commands."
+        exit 0
+    fi
+fi
+
+echo "Downloading commands..."
 for cmd in "${COMMANDS[@]}"; do
     curl -sSL "$REPO_URL/$cmd" -o "$COMMANDS_DIR/$cmd"
 done
-echo "✨ CCPlugins installed to $COMMANDS_DIR"
-echo "📖 Type / in Claude Code to see available commands"
+echo "CCPlugins installed to $COMMANDS_DIR"
+echo "Type / in Claude Code to see available commands"

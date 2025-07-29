@@ -24,6 +24,8 @@ Let me examine the files we've been working on and any recent changes for:
    - Overly complex functions
    - Missing error handling
 
+If I find multiple issues, I'll create a todo list to address them systematically.
+
 For each issue I find, I'll:
 - Show you exactly where it is
 - Explain why it's a problem
