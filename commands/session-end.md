@@ -1,25 +1,28 @@
 # End Coding Session
 
-I'll summarize this coding session and prepare handoff notes.
+I'll summarize this coding session and update the project memory using Claude Code CLI's native memory system.
 
 Let me analyze what we accomplished by:
 1. Looking at what files were created/modified
 2. Checking git changes made during the session
-3. Summarizing the work completed
+3. Updating CLAUDE.md with session summary
 
 ```bash
-# Find the latest session file
-SESSION_FILE=$(ls -t .claude-sessions/session_*.log 2>/dev/null | head -1)
+# Check what changed during the session
+echo "Analyzing changes made during this session..."
+git diff --stat $(git rev-parse HEAD~1 2>/dev/null || echo HEAD) 2>/dev/null || echo "No git changes detected"
 
-if [ -f "$SESSION_FILE" ]; then
-    echo "" >> "$SESSION_FILE"
-    echo "=== Session Summary ===" >> "$SESSION_FILE"
-    echo "Ended: $(date)" >> "$SESSION_FILE"
-    echo "" >> "$SESSION_FILE"
+# Update CLAUDE.md with session summary
+if [ -f "CLAUDE.md" ]; then
+    echo "" >> CLAUDE.md
+    echo "### Session Summary - $(date)" >> CLAUDE.md
+    echo "" >> CLAUDE.md
+else
+    echo "# Project Memory" > CLAUDE.md
+    echo "" >> CLAUDE.md
+    echo "## Session Summary - $(date)" >> CLAUDE.md
+    echo "" >> CLAUDE.md
 fi
-
-# Check what changed
-git diff --stat $(git rev-parse HEAD~1 2>/dev/null || echo HEAD) 2>/dev/null || echo "No git changes"
 ```
 
 ## Session Summary:
@@ -39,4 +42,4 @@ git diff --stat $(git rev-parse HEAD~1 2>/dev/null || echo HEAD) 2>/dev/null || 
 - Important context for next session
 - Any blockers or dependencies
 
-This summary helps maintain continuity between coding sessions.
+This summary will be recorded in CLAUDE.md to maintain continuity with Claude Code CLI's memory system for future sessions.

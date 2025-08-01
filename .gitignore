@@ -23,3 +23,6 @@ desktop.ini
 *.log
 *.tmp
 .cache/
+
+# Legacy session directory (no longer used)
+.claude-sessions/
