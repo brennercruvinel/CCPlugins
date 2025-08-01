@@ -22,18 +22,18 @@ I'll search for these patterns:
 - **NOTE/Note**: Important notes that might indicate incomplete work
 - Various comment styles based on your project's languages
 
-For each marker found, I'll show:
+For each marker found, I'll use the TodoWrite tool to track my progress and show:
 1. **File location** with line number
 2. **The full comment** with context
 3. **Surrounding code** to understand what needs to be done
 4. **Priority assessment** based on the marker type
 
-I'll organize findings by:
+I'll organize findings in TodoWrite by:
 - **Critical** (FIXME, HACK, XXX): Issues that could cause problems
 - **Important** (TODO): Features or improvements needed
 - **Informational** (NOTE): Context that might need attention
 
-I'll also identify:
+I'll also use TodoWrite to track identification of:
 - TODOs that reference missing implementations
 - Placeholder code that needs replacement
 - Incomplete error handling

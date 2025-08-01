@@ -24,12 +24,14 @@ Let me examine the files we've been working on and any recent changes for:
    - Overly complex functions
    - Missing error handling
 
-If I find multiple issues, I'll create a todo list to address them systematically.
+If I find multiple issues, I'll use the TodoWrite tool to create a progress-tracked todo list to address them systematically.
 
 For each issue I find, I'll:
+- Add it to the TodoWrite list with file location and description
 - Show you exactly where it is
 - Explain why it's a problem
 - Suggest how to fix it
+- Mark it as completed in TodoWrite when addressed
 
 If I encounter errors during review:
 - I'll continue checking other files

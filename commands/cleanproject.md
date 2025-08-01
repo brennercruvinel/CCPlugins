@@ -34,13 +34,15 @@ Important: I will NEVER remove:
 - Essential configuration files
 - Source code files unless explicitly identified as temporary
 
-When I find multiple items to clean, I'll create a todo list to process them safely.
+When I find multiple items to clean, I'll use the TodoWrite tool to create a progress-tracked todo list to process them safely.
 
 Before removing anything, I'll:
-1. Show you what I plan to remove
-2. Create backups of files before deletion
-3. Explain why it should be removed
-4. Wait for your confirmation
+1. Add each item to TodoWrite with file path and reason for removal
+2. Show you what I plan to remove
+3. Create backups of files before deletion
+4. Explain why it should be removed
+5. Wait for your confirmation
+6. Mark as completed in TodoWrite when processed
 
 If the cleanup encounters any errors:
 - I'll stop immediately

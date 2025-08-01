@@ -14,12 +14,14 @@ Based on what I find, I'll:
 - Handle the specific syntax for your language
 - Preserve your existing code style
 
-If I find multiple broken imports, I'll create a todo list to fix them systematically.
+If I find multiple broken imports, I'll use the TodoWrite tool to create a progress-tracked todo list to fix them systematically.
 
 For each broken import, I'll:
-1. Show you the broken import with its location
-2. Search for the moved/renamed file
-3. Check for ambiguous matches
+1. Add it to TodoWrite with location and details
+2. Show you the broken import with its location
+3. Search for the moved/renamed file
+4. Check for ambiguous matches
+5. Mark as completed in TodoWrite when fixed
 
 **For ambiguous cases:**
 - If multiple files could match the import
