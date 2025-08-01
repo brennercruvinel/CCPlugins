@@ -66,6 +66,12 @@ def main():
     print("  1. Open Claude Code CLI")
     print("  2. Type / to see available commands")
     print("  3. Use /cleanproject, /commit, etc.")
+    print("\nNew MCP Features:")
+    print("  • /mcp-dynamic - Dynamic command generation")
+    print("  • /project-sync - Multi-platform task synchronization")
+    print("  • External tool integrations (Jira, Linear, GitHub)")
+    print("  • Advanced project scaffolding")
+    print("\nFor MCP setup, see: mcp/README.md")
     print("\nTip: These commands will save you 2-3 hours per week!")
 
 if __name__ == "__main__":

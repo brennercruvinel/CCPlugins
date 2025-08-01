@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **MCP Integration**: Model Context Protocol server for external tool connectivity
+  - `/mcp-dynamic` - Dynamic command generation based on project context
+  - `/project-sync` - Multi-platform task synchronization (Jira, Linear, GitHub)
+  - Jira integration for issue creation and management
+  - Linear integration for issue tracking
+  - Enhanced GitHub operations beyond basic API
+  - Project scaffolding with multiple templates (Python CLI, Web App, API Service, Claude Plugin)
+  - Context analysis for intelligent automation recommendations
 - `/undo` - Rollback last destructive operation with backup support
 - `/make-it-pretty` - Improve code readability without changing functionality (includes type improvements)
 - `/todos-to-issues` - Convert TODO comments to GitHub issues automatically
@@ -18,6 +26,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Uninstall scripts (uninstall.py and uninstall.sh) for easy removal
 - TodoWrite integration in commands that process multiple items
 - Prompt before overwriting existing commands during installation
+
+### Changed
+- Installation now includes MCP commands and features
+- README updated with MCP integration documentation
+- Enhanced installer output with MCP feature highlights
 
 ### Removed
 - `/context-cache` - Removed as Claude Code already maintains context automatically

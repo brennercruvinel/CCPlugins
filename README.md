@@ -173,6 +173,20 @@ Pre-configured commands that make Claude Code work like the senior engineer you 
 ```
 /human-mode
 ```
+---
+### MCP Integration (NEW)
+
+*Generate dynamic commands based on project context*
+```
+/mcp-dynamic
+```
+
+
+
+*Synchronize tasks across multiple platforms (Jira, Linear, GitHub)*
+```
+/project-sync
+```
 
 
 ## Real World Example
@@ -204,16 +218,24 @@ CCPlugins are markdown files that provide intelligent instructions to Claude Cod
 3. Executes the appropriate actions
 4. Provides clear feedback
 
+**New MCP Integration:**
+- **External Tool Connectivity**: Connect with Jira, Linear, GitHub API, and other development tools
+- **Dynamic Command Generation**: Create context-aware commands based on project analysis
+- **Advanced Template System**: Generate project scaffolding and boilerplate code
+- **Cross-Platform Synchronization**: Manage tasks across multiple platforms
+
 **Key Principles:**
 - Commands are **conversational instructions**, not rigid scripts
 - Claude interprets and adapts to your specific project context
 - Multiple tools can be used in parallel for efficiency
 - Works with any language or framework through contextual analysis
+- **MCP integration extends functionality beyond Claude Code CLI limitations**
 
 **Limitations:**
 - Commands rely on Claude's contextual interpretation
 - May need guidance in unconventional project structures
 - Subject to model usage limits (Opus/Sonnet)
+- MCP features require additional setup for external tool access
 
 ## Technical Notes
 
@@ -258,10 +280,25 @@ Custom commands appear with a `(user)` tag in Claude Code CLI to distinguish the
 ## Requirements
 
 - Claude Code CLI
-- Python 3.6+ (for installer)
+- Python 3.6+ (for installer and MCP server)
 - Git (for version control commands)
 
+**For MCP Integration:**
+- External tool API tokens (optional):
+  - Jira: API token and URL
+  - Linear: API token  
+  - GitHub: CLI authentication (`gh auth login`)
+
 ## Advanced Usage
+
+### MCP Integration Setup
+
+CCPlugins now includes Model Context Protocol (MCP) integration for external tool connectivity. See [mcp/README.md](mcp/README.md) for detailed setup instructions.
+
+**Quick MCP Setup:**
+1. Configure Claude Desktop with the CCPlugins MCP server
+2. Set environment variables for external tools
+3. Use `/mcp-dynamic` and `/project-sync` commands
 
 ### Creating Custom Commands
 Create your own commands by adding markdown files to `~/.claude/commands/`:
