@@ -1,39 +1,56 @@
-# Code Review
+# Comprehensive Code Review
 
-I'll review your code for potential issues.
+I'll conduct a thorough code review using specialized sub-agents to provide focused, expert-level analysis while preserving our main context.
 
-Let me examine the files we've been working on and any recent changes for:
+## Review Process
 
-1. **Security Issues**
-   - Hardcoded credentials
-   - Input validation problems
-   - Potential vulnerabilities
+I'll orchestrate three specialized sub-agents, each with deep expertise in their domain:
 
-2. **Common Bugs**
-   - Null/undefined handling
-   - Error handling gaps
-   - Logic errors
+### 🛡️ Security Analysis
+I'll delegate security analysis to my specialized security sub-agent who will:
+- Scan for vulnerabilities and security risks
+- Check for exposed credentials and sensitive data
+- Analyze authentication and authorization patterns
+- Review input validation and injection risks
+- Assess dependency security
 
-3. **Performance Concerns**
-   - Inefficient patterns
-   - Memory leaks
-   - Unnecessary operations
+### ⚡ Performance Analysis  
+I'll engage my performance sub-agent who will:
+- Identify algorithmic inefficiencies and bottlenecks
+- Analyze memory usage and potential leaks
+- Review I/O operations and concurrency patterns
+- Suggest optimization opportunities
+- Evaluate scalability concerns
 
-4. **Code Quality**
-   - Dead code
-   - Overly complex functions
-   - Missing error handling
+### 🔧 Code Quality Analysis
+I'll utilize my code quality sub-agent who will:
+- Review code structure and organization
+- Identify code smells and anti-patterns  
+- Check error handling and robustness
+- Analyze maintainability and readability
+- Suggest refactoring opportunities
 
-If I find multiple issues, I'll create a todo list to address them systematically.
+## Coordinated Analysis
 
-For each issue I find, I'll:
-- Show you exactly where it is
-- Explain why it's a problem
-- Suggest how to fix it
+Each sub-agent will provide:
+- **Focused Expertise**: Deep analysis in their specialized domain
+- **Detailed Findings**: Specific issues with locations and solutions
+- **Prioritized Recommendations**: Critical issues highlighted first
+- **Actionable Fixes**: Concrete steps to resolve each issue
 
-If I encounter errors during review:
-- I'll continue checking other files
+## Review Execution
+
+Let me begin by running each specialized analysis:
+
+1. **Security Review**: `/review-security` - Comprehensive security analysis
+2. **Performance Review**: `/review-performance` - Performance optimization analysis  
+3. **Code Quality Review**: `/review-quality` - Maintainability and structure analysis
+
+I'll preserve our conversation context while each sub-agent provides their specialized analysis, then synthesize the findings into a comprehensive review summary.
+
+If any sub-agent encounters errors:
+- I'll continue with other analyses
 - Report what couldn't be analyzed
-- Focus on the code I can access
+- Focus on accessible code areas
 
-This review focuses on real problems that could affect your application.
+This multi-agent approach ensures thorough coverage while maintaining focused expertise in each domain.
