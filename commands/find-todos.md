@@ -1,8 +1,8 @@
 # Find TODOs
 
-I'll locate all TODO comments and unfinished work markers in your codebase.
+I'll locate all TODO comments and unfinished work markers in your codebase, using conversation context and available resources.
 
-First, let me scan for various TODO patterns:
+First, let me scan for various TODO patterns, focusing on files we've been working on and using `@file` references where relevant:
 
 ```bash
 # Common TODO patterns across different languages
@@ -23,10 +23,10 @@ I'll search for these patterns:
 - Various comment styles based on your project's languages
 
 For each marker found, I'll show:
-1. **File location** with line number
-2. **The full comment** with context
+1. **File location** with line number (using `@file` references when possible)
+2. **The full comment** with context from our conversation
 3. **Surrounding code** to understand what needs to be done
-4. **Priority assessment** based on the marker type
+4. **Priority assessment** based on the marker type and our recent work
 
 I'll organize findings by:
 - **Critical** (FIXME, HACK, XXX): Issues that could cause problems
@@ -39,4 +39,4 @@ I'll also identify:
 - Incomplete error handling
 - Stubbed functions awaiting implementation
 
-This helps you track and prioritize unfinished work in your codebase.
+This helps you track and prioritize unfinished work in your codebase, leveraging conversation context and Claude Code CLI's understanding of your project to provide more intelligent insights.

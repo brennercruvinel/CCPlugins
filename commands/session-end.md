@@ -1,11 +1,12 @@
 # End Coding Session
 
-I'll summarize this coding session and prepare handoff notes.
+I'll summarize this coding session and prepare handoff notes using conversation context and available resources.
 
 Let me analyze what we accomplished by:
-1. Looking at what files were created/modified
+1. Looking at what files were created/modified (using `@file` references where possible)
 2. Checking git changes made during the session
-3. Summarizing the work completed
+3. Summarizing the work completed with context from our conversation
+4. Capturing insights from Claude Code CLI's resource discovery
 
 ```bash
 # Find the latest session file
@@ -35,8 +36,9 @@ git diff --stat $(git rev-parse HEAD~1 2>/dev/null || echo HEAD) 2>/dev/null || 
 - Next steps recommended
 
 ### Handoff Notes:
-- Key decisions made
-- Important context for next session
+- Key decisions made (informed by conversation context)
+- Important context for next session (leveraging Claude Code CLI resources)
 - Any blockers or dependencies
+- Files and patterns established (using `@file` references)
 
-This summary helps maintain continuity between coding sessions.
+This summary helps maintain continuity between coding sessions and preserves contextual awareness for future work.

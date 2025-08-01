@@ -1,8 +1,8 @@
 # Smart Git Commit
 
-I'll analyze your changes and create a meaningful commit message.
+I'll analyze your changes and create a meaningful commit message using available context.
 
-First, let me check if this is a git repository and what's changed:
+First, let me check if this is a git repository and what's changed, leveraging our conversation history to understand the context of these changes:
 
 ```bash
 # Verify we're in a git repository
@@ -27,9 +27,9 @@ git diff --stat
 ```
 
 Now I'll analyze the changes to determine:
-1. What files were modified
-2. The nature of changes (feature, fix, refactor, etc.)
-3. The scope/component affected
+1. What files were modified (using `@file` references where available)
+2. The nature of changes (feature, fix, refactor, etc.) based on our conversation context
+3. The scope/component affected, informed by our recent work and project understanding
 
 If the analysis or commit encounters errors:
 - I'll explain what went wrong
@@ -47,18 +47,18 @@ fi
 git diff --cached --name-status
 ```
 
-Based on the analysis, I'll create a conventional commit message:
+Based on the analysis and our conversation context, I'll create a conventional commit message:
 - **Type**: feat|fix|docs|style|refactor|test|chore
-- **Scope**: component or area affected (optional)
-- **Subject**: clear description in present tense
-- **Body**: why the change was made (if needed)
+- **Scope**: component or area affected (using project context)
+- **Subject**: clear description in present tense, informed by our work
+- **Body**: why the change was made (leveraging conversation history if needed)
 
 ```bash
 # I'll create the commit with the analyzed message
 # Example: git commit -m "fix(auth): resolve login timeout issue"
 ```
 
-The commit message will be concise, meaningful, and follow your project's conventions if I can detect them from recent commits.
+The commit message will be concise, meaningful, and follow your project's conventions if I can detect them from recent commits or our conversation history.
 
 **Important**: I will NEVER:
 - Add "Co-authored-by" or any Claude signatures

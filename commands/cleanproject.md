@@ -17,9 +17,10 @@ fi
 ```
 
 Then I'll identify what should be cleaned based on:
-- Our conversation history
-- Common development patterns
-- Temporary files and artifacts
+- Our conversation history and context from recent work
+- Files we've been working on (using `@file` references where available)
+- Claude Code CLI's resource discovery of project patterns
+- Temporary files and artifacts from our current session
 
 I'll look for and remove:
 - Debug/log files
@@ -34,12 +35,12 @@ Important: I will NEVER remove:
 - Essential configuration files
 - Source code files unless explicitly identified as temporary
 
-When I find multiple items to clean, I'll create a todo list to process them safely.
+When I find multiple items to clean, I'll create a todo list to process them safely, using context from our conversation to prioritize what's most likely to be temporary or unwanted.
 
 Before removing anything, I'll:
-1. Show you what I plan to remove
+1. Show you what I plan to remove with specific `@file` references when possible
 2. Create backups of files before deletion
-3. Explain why it should be removed
+3. Explain why it should be removed based on our conversation context
 4. Wait for your confirmation
 
 If the cleanup encounters any errors:
