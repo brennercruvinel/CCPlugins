@@ -39,6 +39,7 @@ CCPlugins is a curated set of commands that extend Claude Code Cli with common d
 
 - [Installation](#installation) - Get started in 30 seconds
 - [Commands](#commands) - See all available commands
+- [Hooks Integration](#hooks-integration) - Automatic code formatting
 - [How It Works](#how-it-works) - Understanding the magic
 - [Technical Notes](#technical-notes) - Why conversational design matters
 - [Contributing](#contributing) - Help make it better
@@ -194,6 +195,34 @@ src/
 ├── UserService.js          # Clean production code
 └── UserService.test.js     # Actual tests preserved
 ```
+
+## Hooks Integration
+
+🔧 **Automatic Code Formatting** - Never worry about formatting again
+
+CCPlugins integrates seamlessly with Claude Code CLI's hooks system for automatic code formatting after every Edit/MultiEdit/Write operation.
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [{
+      "matcher": "Edit|MultiEdit|Write",
+      "hooks": [{
+        "type": "command",
+        "command": "npx prettier --write \"$file_path\""
+      }]
+    }]
+  }
+}
+```
+
+**Benefits:**
+- ✅ Automatic formatting after every code change
+- ✅ Respects your project's formatter configuration
+- ✅ Works with Prettier, ESLint, Black, rustfmt, gofmt, and more
+- ✅ Zero friction - formatting happens transparently
+
+📖 **[Complete Hooks Guide](HOOKS.md)** - Setup instructions and examples for all popular formatters
 
 ## How It Works
 

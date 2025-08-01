@@ -37,6 +37,11 @@ def main():
         print(f"[ERROR] No .md files found in {commands_source}")
         sys.exit(1)
     
+    # Also copy hooks documentation
+    hooks_doc = script_dir / "HOOKS.md"
+    if hooks_doc.exists():
+        command_files.append(hooks_doc)
+    
     # Check for existing commands
     existing_commands = []
     for file in command_files:
@@ -57,7 +62,10 @@ def main():
     
     print(f"\n[INSTALL] Installing {len(command_files)} commands:")
     for file in command_files:
-        dest_file = commands_dest / file.name
+        if file.name == "HOOKS.md":
+            dest_file = claude_dir / file.name  # Install to ~/.claude/ root
+        else:
+            dest_file = commands_dest / file.name  # Install to ~/.claude/commands/
         shutil.copy2(file, dest_file)
         print(f"  + {file.name}")
     
@@ -66,6 +74,7 @@ def main():
     print("  1. Open Claude Code CLI")
     print("  2. Type / to see available commands")
     print("  3. Use /cleanproject, /commit, etc.")
+    print("  4. See ~/.claude/HOOKS.md for automatic formatting setup")
     print("\nTip: These commands will save you 2-3 hours per week!")
 
 if __name__ == "__main__":

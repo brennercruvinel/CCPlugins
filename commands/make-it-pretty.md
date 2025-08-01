@@ -64,4 +64,6 @@ git add -A
 git commit -m "Prettify code: improve readability and organization" || echo "No changes made"
 ```
 
+**⚡ Supercharge with Hooks:** Combine with [automatic formatting hooks](../HOOKS.md) for the ultimate code beautification experience. Your code will be instantly formatted after every prettification operation!
+
 This helps transform working code into maintainable code without risk.

@@ -48,5 +48,11 @@ echo "Downloading commands..."
 for cmd in "${COMMANDS[@]}"; do
     curl -sSL "$REPO_URL/$cmd" -o "$COMMANDS_DIR/$cmd"
 done
+
+# Download hooks documentation
+echo "Downloading hooks integration guide..."
+curl -sSL "https://raw.githubusercontent.com/brennercruvinel/CCPlugins/main/HOOKS.md" -o "$COMMANDS_DIR/../HOOKS.md"
+
 echo "CCPlugins installed to $COMMANDS_DIR"
 echo "Type / in Claude Code to see available commands"
+echo "See ~/.claude/HOOKS.md for automatic formatting setup"

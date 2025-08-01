@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "PostToolUse": [{
+      "matcher": "Edit|MultiEdit|Write",
+      "hooks": [{
+        "type": "command",
+        "command": "if [ -f package.json ]; then npx prettier --write \"$file_path\"; elif [ -f requirements.txt ]; then black \"$file_path\"; elif [ -f go.mod ]; then gofmt -w \"$file_path\"; elif [ -f Cargo.toml ]; then rustfmt \"$file_path\"; else echo \"No formatter configured for this project type\"; fi"
+      }]
+    }]
+  }
+}

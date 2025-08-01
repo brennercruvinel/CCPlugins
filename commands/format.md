@@ -28,3 +28,26 @@ If formatting fails:
 - Suggest fixes or alternatives
 
 This ensures consistent code style according to your project's standards.
+
+## Automatic Formatting with Hooks
+
+For seamless formatting on every code change, consider setting up Claude Code CLI hooks. This will automatically format code after Edit/MultiEdit/Write operations without manual intervention.
+
+See the [Hooks Integration Guide](../HOOKS.md) for setup instructions and examples for popular formatters like Prettier, Black, ESLint, and more.
+
+**Quick Setup Example:**
+```json
+{
+  "hooks": {
+    "PostToolUse": [{
+      "matcher": "Edit|MultiEdit|Write",
+      "hooks": [{
+        "type": "command", 
+        "command": "npx prettier --write \"$file_path\""
+      }]
+    }]
+  }
+}
+```
+
+Add this to `~/.claude/config.json` to automatically format JavaScript/TypeScript files.

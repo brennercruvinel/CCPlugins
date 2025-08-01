@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "PostToolUse": [{
+      "matcher": "Edit|MultiEdit|Write",
+      "hooks": [{
+        "type": "command",
+        "command": "if [[ \"$file_path\" =~ \\.(js|ts|jsx|tsx)$ ]]; then npx prettier --write \"$file_path\"; elif [[ \"$file_path\" =~ \\.py$ ]]; then black \"$file_path\"; elif [[ \"$file_path\" =~ \\.go$ ]]; then gofmt -w \"$file_path\"; elif [[ \"$file_path\" =~ \\.rs$ ]]; then rustfmt \"$file_path\"; fi"
+      }]
+    }]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [{
+      "matcher": "Edit|MultiEdit|Write",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "isort \"$file_path\""
+        },
+        {
+          "type": "command",
+          "command": "black \"$file_path\""
+        }
+      ]
+    }]
+  }
+}

@@ -33,4 +33,6 @@ For each file with obvious comments, I'll:
 3. Show the cleaner version
 4. Apply the changes after your confirmation
 
+**💡 Pro Tip:** Enable [automatic formatting hooks](../HOOKS.md) to ensure consistent code style after comment cleanup. Your code will be properly formatted automatically after every modification.
+
 This creates cleaner, more maintainable code where every comment has real value.

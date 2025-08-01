@@ -34,6 +34,8 @@ For each broken import, I'll:
 - Continue with other fixable imports
 - Suggest manual fixes if needed
 
+**💡 Pro Tip:** Set up [hooks integration](../HOOKS.md) to automatically format your code after import fixes. This ensures consistent styling across your entire codebase without manual intervention.
+
 After fixing imports:
 - Verify the syntax is correct
 - Ensure no new conflicts were introduced
