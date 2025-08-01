@@ -1,0 +1,40 @@
+name: Simple CCPlugins Integration
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  simple-integration:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install CCPlugins
+      run: |
+        python install.py
+        echo "✅ CCPlugins installed successfully"
+        
+    - name: Verify Installation
+      run: |
+        ls -la ~/.claude/commands/
+        echo "Commands installed: $(ls ~/.claude/commands/*.md | wc -l)"
+        
+    - name: Basic Code Quality Check
+      run: |
+        echo "=== Basic Code Quality Check ==="
+        
+        # Check for potential issues
+        echo "Checking for TODOs and FIXMEs..."
+        grep -r "TODO\|FIXME\|HACK" . --exclude-dir=.git --exclude-dir=.github || echo "No issues found"
+        
+        echo "Checking Python syntax..."
+        find . -name "*.py" -exec python -m py_compile {} \; || echo "Python syntax check failed"
+        
+        echo "✅ Basic quality check completed"

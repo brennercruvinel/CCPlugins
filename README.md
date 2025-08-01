@@ -39,6 +39,7 @@ CCPlugins is a curated set of commands that extend Claude Code Cli with common d
 
 - [Installation](#installation) - Get started in 30 seconds
 - [Commands](#commands) - See all available commands
+- [GitHub Actions Integration](docs/github-actions.md) - CI/CD workflows and automation
 - [How It Works](#how-it-works) - Understanding the magic
 - [Technical Notes](#technical-notes) - Why conversational design matters
 - [Contributing](#contributing) - Help make it better
@@ -283,7 +284,23 @@ Commands support arguments via `$ARGUMENTS`:
 ```
 
 ### CI/CD Integration
-Commands work seamlessly in automated workflows:
+
+CCPlugins can be integrated into GitHub Actions and other CI/CD platforms for automated workflows:
+
+```yaml
+# Example GitHub Actions workflow
+- name: Install CCPlugins
+  run: python install.py
+
+- name: Automated Code Review
+  run: |
+    # Implement /review command logic
+    echo "Running security and quality analysis..."
+```
+
+**📚 [Complete GitHub Actions Integration Guide](docs/github-actions.md)**
+
+Commands also work seamlessly in local automated workflows:
 
 ```bash
 claude /test && claude /commit
