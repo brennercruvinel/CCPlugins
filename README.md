@@ -1,3 +1,20 @@
+
+
+## 🚨 V2 in Development
+
+CCPlugins V2 is currently in active development due to recent Anthropic updates (SDK improvements, native subagents, context memory, and enhanced CLI capabilities). Several slash commands have become redundant as Claude Code CLI now handles them natively.
+
+V2 will be a complete architectural redesign focusing on what Claude Code still can't do efficiently.
+
+**Current version (v1) remains stable and functional.**
+
+
+[![V2 Teaser](https://raw.githubusercontent.com/brennercruvinel/AutoSauce/99df4833a19bd85aa3058765f2d9a68e89a55685/auto-sauce-brenner-cruvinel-claude-code.png)](https://github.com/brennercruvinel/AutoSauce)
+
+---
+
+
+
 ```
  ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗     ██████╗ ██████╗ ██████╗ ███████╗
 ██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝    ██╔════╝██╔═══██╗██╔══██╗██╔════╝
