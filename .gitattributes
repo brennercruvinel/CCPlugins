@@ -1,0 +1,20 @@
+* text=auto
+
+# Line endings
+*.sh text eol=lf
+*.bash text eol=lf
+*.zsh text eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.7z binary
+
