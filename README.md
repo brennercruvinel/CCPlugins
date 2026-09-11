@@ -1,6 +1,6 @@
 
 
-## 🚨 V2 in Development
+## V2 in Development
 
 CCPlugins V2 is currently in active development due to recent Anthropic updates (SDK improvements, native subagents, context memory, and enhanced CLI capabilities). Several slash commands have become redundant as Claude Code CLI now handles them natively.
 
@@ -429,5 +429,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 [![Star History Chart](https://api.star-history.com/svg?repos=brennercruvinel/CCPlugins&type=Date)](https://star-history.com/#brennercruvinel/CCPlugins&Date)
 
 ---
+
+this is maintained by brenner cruvinel (brenner@hoffresearch.com).
+all contributions are welcome.
 
 **Last Updated:** August 2, 2025 (Based on Anthropic Claude Code CLI documentation v2025.08.01)
